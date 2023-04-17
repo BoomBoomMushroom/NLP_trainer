@@ -86,7 +86,7 @@ else:
     X = padded_sequences[:, :-1]
     y = padded_sequences[:, 1:]
 
-    model.fit(X, y, epochs=10, verbose=1, callbacks=[cp_callback])
+    model.fit(X, y, epochs=1000, verbose=1, callbacks=[cp_callback])
 
     model.save_weights(checkpoint_path.format(epoch=0))
 
