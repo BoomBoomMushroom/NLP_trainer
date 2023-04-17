@@ -29,7 +29,7 @@ def cleanString(text=""):
     text = regex.sub(r'[^\x00-\x7F\x80-\xFF\u0100-\u017F\u0180-\u024F\u1E00-\u1EFF]', '', text)
     return text
 
-def readText(fileName="TheCord_general.txt"):
+def readText(fileName="training_data.txt"):
     # Open the text file and read its contents
     with open(fileName, "r") as file:
         text = ""
@@ -40,7 +40,7 @@ def readText(fileName="TheCord_general.txt"):
         #text = file.read()
     return text
 
-text = cleanString(readText("TheCord_general.txt")).split("\n")
+text = cleanString(readText("training_data.txt")).split("\n")
 tokenizer = Tokenizer()
 tokenizer.fit_on_texts(text)
 sequences = tokenizer.texts_to_sequences(text)
